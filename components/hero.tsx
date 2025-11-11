@@ -1,39 +1,43 @@
-"use client"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowDown } from "lucide-react"
-import { useState, useEffect } from "react"
+"use client";
+import { motion, easeOut } from "framer-motion"; 
+import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
+import { useState, useEffect } from "react";
+
 
 const portfolioConfig = {
   personal: {
     name: "John Doe",
-    title: "Visual Designer & Creative Thinker"
-  }
-}
+    title: "Visual Designer & Creative Thinker",
+  },
+};
 
 export function Hero() {
-  const { name, title } = portfolioConfig.personal
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const { name, title } = portfolioConfig.personal;
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: (e.clientX / window.innerWidth - 0.5) * 20,
-        y: (e.clientY / window.innerHeight - 0.5) * 20
-      })
-    }
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
+        y: (e.clientY / window.innerHeight - 0.5) * 20,
+      });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
-  }
+      transition: {
+        duration: 0.8,
+        ease: easeOut,
+      },
+    },
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -41,10 +45,10 @@ export function Hero() {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
-  }
+        delayChildren: 0.3,
+      },
+    },
+  };
 
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center px-4 md:px-8 lg:px-16 pt-20 md:pt-32 overflow-hidden">
@@ -60,15 +64,15 @@ export function Hero() {
               rgba(251, 146, 60, 0.3) 75%,
               rgba(236, 72, 153, 0.32) 100%
             )
-          `
+          `,
         }}
         animate={{
-          scale: [1, 1.05, 1]
+          scale: [1, 1.05, 1],
         }}
         transition={{
           duration: 20,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: "easeInOut",
         }}
       />
 
@@ -88,15 +92,15 @@ export function Hero() {
               transparent 12deg
             )
           `,
-          transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`
+          transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
         }}
         animate={{
-          rotate: [0, 360]
+          rotate: [0, 360],
         }}
         transition={{
           duration: 60,
           repeat: Infinity,
-          ease: "linear"
+          ease: "linear",
         }}
       />
 
@@ -106,12 +110,12 @@ export function Hero() {
         animate={{
           x: [0, 50, 0],
           y: [0, 30, 0],
-          scale: [1, 1.1, 1]
+          scale: [1, 1.1, 1],
         }}
         transition={{
           duration: 15,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: "easeInOut",
         }}
       />
       <motion.div
@@ -119,13 +123,13 @@ export function Hero() {
         animate={{
           x: [0, -30, 0],
           y: [0, 50, 0],
-          scale: [1, 1.15, 1]
+          scale: [1, 1.15, 1],
         }}
         transition={{
           duration: 18,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: 1
+          delay: 1,
         }}
       />
       <motion.div
@@ -133,13 +137,13 @@ export function Hero() {
         animate={{
           x: [0, 40, 0],
           y: [0, -40, 0],
-          scale: [1, 1.2, 1]
+          scale: [1, 1.2, 1],
         }}
         transition={{
           duration: 20,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: 2
+          delay: 2,
         }}
       />
 
@@ -173,8 +177,8 @@ export function Hero() {
             className="bg-foreground text-background hover:bg-muted-foreground transition-all"
             onClick={() => {
               document.querySelector("#work")?.scrollIntoView({
-                behavior: "smooth"
-              })
+                behavior: "smooth",
+              });
             }}
           >
             View Portfolio
@@ -186,11 +190,11 @@ export function Hero() {
           variants={fadeInUp}
           className="mt-20 md:mt-24 flex justify-center"
           animate={{
-            y: [0, 8, 0]
+            y: [0, 8, 0],
           }}
           transition={{
             duration: 3,
-            repeat: Infinity
+            repeat: Infinity,
           }}
         >
           <ArrowDown className="w-5 h-5 text-muted-foreground" />
@@ -200,5 +204,5 @@ export function Hero() {
       {/* Subtle background divider */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-border" />
     </section>
-  )
+  );
 }
