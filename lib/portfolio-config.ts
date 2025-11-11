@@ -1,0 +1,82 @@
+export const portfolioConfig = {
+  personal: {
+    name: "John Doe",
+    title: "Visual Designer & Creative Thinker",
+    location: "San Francisco, CA",
+    email: "hello@johndoe.com",
+    bio: "I'm a multidisciplinary designer with a passion for clean aesthetics and meaningful visuals. Specializing in branding, art direction, and visual design.",
+    socialLinks: {
+      instagram: "https://instagram.com",
+      linkedin: "https://linkedin.com",
+      twitter: "https://twitter.com",
+      dribbble: "https://dribbble.com",
+    },
+  },
+  projects: [
+    {
+      id: 1,
+      title: "Project One",
+      category: "Branding",
+      image: "/minimalist-brand-identity.jpg",
+      description: "A comprehensive branding project exploring visual identity and design systems.",
+      tags: ["Design", "Branding", "Typography"],
+    },
+    {
+      id: 2,
+      title: "Brand Study",
+      category: "Art Direction",
+      image: "/brand-study-art-direction.jpg",
+      description: "In-depth exploration of brand aesthetics through visual experimentation.",
+      tags: ["Art Direction", "Design", "Concept"],
+    },
+    {
+      id: 3,
+      title: "Editorial Layout",
+      category: "Design",
+      image: "/editorial-magazine-layout.png",
+      description: "Editorial design focusing on typography and spatial hierarchy.",
+      tags: ["Editorial", "Typography", "Layout"],
+    },
+    {
+      id: 4,
+      title: "Minimal Poster",
+      category: "Design",
+      image: "/minimalist-poster-art.jpg",
+      description: "Exploration of minimalism and negative space in poster design.",
+      tags: ["Poster", "Minimalism", "Design"],
+    },
+    {
+      id: 5,
+      title: "Photography Series",
+      category: "Photography",
+      image: "/fine-art-photography-series.jpg",
+      description: "Curated collection exploring light, form, and composition.",
+      tags: ["Photography", "Art", "Visual"],
+    },
+    {
+      id: 6,
+      title: "Concept Art",
+      category: "Art",
+      image: "/concept-art-illustration.jpg",
+      description: "Experimental visual concepts pushing creative boundaries.",
+      tags: ["Concept", "Art", "Illustration"],
+    },
+  ],
+  services: [
+    {
+      title: "Branding",
+      description: "Complete brand identity development including logo, color systems, and visual guidelines.",
+      icon: "palette",
+    },
+    {
+      title: "Art Direction",
+      description: "Strategic visual direction for campaigns, editorial, and digital experiences.",
+      icon: "sparkles",
+    },
+    {
+      title: "Visual Design",
+      description: "Thoughtful design solutions for web, print, and environmental applications.",
+      icon: "layout",
+    },
+  ],
+}
